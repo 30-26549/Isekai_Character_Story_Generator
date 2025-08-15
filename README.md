@@ -24,11 +24,14 @@
 4. 打开浏览器访问 http://127.0.0.1:5000
 
 ## 文件结构
-- app.py         —— Flask主程序
-- templates/
-  - index.html   —— 前端页面
-- .env           —— OpenAI密钥（需自行创建）
+
+- `app.py`         ：Flask 主程序
+- `templates/`     
+  - `index.html`   ：前端页面
+- `.env`           ：OpenAI 密钥（需自行创建）
+
 
 ## 注意
 - 需自行注册账号并获取API Key。
 - 本项目仅供学习和交流使用。
+

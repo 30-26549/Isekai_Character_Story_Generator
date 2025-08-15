@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>你的异世界角色与冒险故事</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f5f5fa; margin: 0; padding: 0; }
+        .container { max-width: 700px; margin: 40px auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px #ccc; padding: 32px; }
+        h1 { text-align: center; color: #4b3f72; }
+        .result { margin-top: 24px; background: #f0f0ff; border-left: 4px solid #4b3f72; padding: 16px; border-radius: 4px; white-space: pre-wrap; font-size: 1.08em; }
+        .back-btn { display: block; margin: 32px auto 0 auto; background: #4b3f72; color: #fff; border: none; padding: 10px 24px; border-radius: 4px; cursor: pointer; font-size: 16px; text-align: center; text-decoration: none; }
+        .back-btn:hover { background: #6c63ff; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>你的异世界角色与冒险故事</h1>
+        {% if parsed %}
+        <div class="result" style="background:#f8f6ff;">
+            <h2 style="color:#4b3f72;">角色分析</h2>
+            <div style="margin-bottom:12px;">
+                <b>性格概述：</b>{{ parsed['角色分析']['性格概述'] }}<br>
+                <b>优点：</b>{{ parsed['角色分析']['优点']|join('，') }}<br>
+                <b>缺点：</b>{{ parsed['角色分析']['缺点']|join('，') }}<br>
+                <b>核心动机：</b>{{ parsed['角色分析']['核心动机'] }}<br>
+                <b>潜在冲突：</b>{{ parsed['角色分析']['潜在冲突'] }}
+            </div>
+            <h2 style="color:#4b3f72;">世界观设定</h2>
+            <div style="margin-bottom:12px;">
+                <b>世界观：</b>{{ parsed['世界观'] }}<br>
+                <b>世界难度：</b>{{ parsed['世界难度'] }}<br>
+                <b>任务类型：</b>{{ parsed['任务类型'] }}
+            </div>
+            <h2 style="color:#4b3f72;">冒险故事</h2>
+            <div style="white-space:pre-line;">{{ parsed['冒险故事'] }}</div>
+        </div>
+        {% elif result %}
+        <div class="result" style="background:#fff0f0;">未能自动解析AI返回内容，原文如下：<br><br>{{ result|safe }}</div>
+        {% else %}
+        <div class="result">未获取到结果，请返回重新生成。</div>
+        {% endif %}
+        <a href="/" class="back-btn">返回重新生成</a>
+    </div>
+</body>
+</html>

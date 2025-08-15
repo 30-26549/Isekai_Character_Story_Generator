@@ -33,6 +33,7 @@
 - app.py         —— Flask主程序
 - templates/
    - index.html   —— 前端页面
+   - result.html   —— 输出结果页面
 - .env           —— DeepSeek 密钥（需自行创建）
 - requirements.txt —— 依赖包列表
 - .gitignore     —— 已包含常用忽略规则
